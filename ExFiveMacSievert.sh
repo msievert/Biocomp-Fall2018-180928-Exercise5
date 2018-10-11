@@ -6,6 +6,8 @@
 
 cat wages.csv | cut -d ',' -f 1,2 | tr ',' ' ' | sort | uniq > GenderExperienceMACS.csv
 
+##Brittni: If you use 'sort -t " " -k1,1 -k2,2n' this works. (-0.25)
+
 #2A. these lines sorts wages.csv by the wage column, cuts out the gender years experience and wage, and 
 # prints the row with the highest wage (which is at the bottom of the list, hence 'tail' not 'head'
 
@@ -38,3 +40,5 @@ b= cat wages.csv | cut -d ',' -f 3,4 | sort | awk -F, '$1=="16"' | cut -d ',' -f
 # this code subrtacts the minimum wage of 12 years of school from 16 years of school. 
 echo the effect of graduating college on minimum wage is:
 echo "$b - $a" | bc
+
+#Brittni: This doesn't parse correctly because you need to assign variables with the variable=$() notation. (-0.25)
